@@ -1,8 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   reactCompiler: true,
+  images: {
+    domains: ["platform.phonico.com"],
+  },
 };
 
 export default nextConfig;
