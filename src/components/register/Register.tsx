@@ -16,7 +16,6 @@ function Register() {
             return;
         }
         const send: otp = await otpService(email);
-        console.log(send);
 
         if (send.status) {
             toast.success(send.message);

@@ -31,20 +31,20 @@ function Packages({ data }: { data: Plan[] }) {
           <span className="text-(--btn-pink)">Expectations!</span>
         </h1>
 
-        {/* Packages Cards */}
+      
         <div className="flex flex-wrap justify-center gap-5 mt-10  mx-auto">
           {data?.map((item: Plan) => (
             <div
               key={item.id}
               className="w-full sm:w-[48%] md:w-[30%] lg:w-[23%] rounded-2xl bg-card shadow-xl "
             >
-              {/* Top GB (screenshot style) */}
+          
               <h2 className="text-center text-2xl font-bold py-4">
                 {item.data_usable}
                 {item.unit}
               </h2>
 
-              {/* Price Bar */}
+        
               <div className="bg-chart-2/70 text-center py-4">
                 <p className="text-2xl font-bold text-card-foreground">
                   ${item.price}/month
@@ -55,7 +55,7 @@ function Packages({ data }: { data: Plan[] }) {
                 </p>
               </div>
 
-              {/* Content */}
+          
               <div className="p-5">
                 <h3 className="text-center font-semibold mb-2">
                   Business Boost Plan
@@ -66,7 +66,7 @@ function Packages({ data }: { data: Plan[] }) {
                   Ventures? Enjoy Hi-Speed Connectivity.
                 </p>
 
-                {/* Features */}
+          
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-center gap-2">
                     ✔ High-speed internet
@@ -83,7 +83,7 @@ function Packages({ data }: { data: Plan[] }) {
                   </li>
                 </ul>
 
-                {/* Button */}
+             
                 <Link href={`/plans/${item.slug ?? generateSlug(item.name)}`}>
                   <button className=" cursor-pointer mt-6 w-full bg-(--btn-pink) text-background py-3 rounded-xl font-semibold  transition">
                     View Plan

@@ -6,7 +6,7 @@ const apiKey = "46b01d98-5d6e-4d9e-a3dc-9cc05438ddbc";
 export async function otpfun(email: string) {
   try {
     const res = await fetch(`${baseUrl}/api/send-otp?email=${email}`, {
-      method: "GET", // ya POST depend karta hai API par
+      method: "GET",
       headers: {
         "API-KEY": apiKey,
       },
@@ -14,7 +14,6 @@ export async function otpfun(email: string) {
 
     const data: otp = await res.json();
 
-    console.log("OTP Response:", data);
 
     return data;
   } catch (error) {

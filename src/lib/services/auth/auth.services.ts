@@ -1,4 +1,3 @@
-// Fixed auth.services.ts
 import { LoginResponseType } from "@/lib/types/login.types";
 import { otp } from "@/lib/types/otp.types";
 

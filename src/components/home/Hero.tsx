@@ -7,7 +7,7 @@ import Button from "@/components-button/Button";
 function Hero() {
   return (
     <div className="px-4 sm:px-6 lg:px-16 py-8 flex flex-col md:flex-row items-center gap-8">
-      {/* LEFT: Text Section */}
+   
       <div className="flex-1">
         <h2 className="tracking-[0.8px] text-lg sm:text-xl font-semibold">
           Phonico - Your Gateway to USA Connectivity
@@ -38,7 +38,7 @@ function Hero() {
         </div>
       </div>
 
-      {/* RIGHT: Image Section */}
+    
       <div className="flex-1 flex justify-center md:justify-end">
         <div className="w-full max-w-sm md:max-w-md lg:max-w-lg mt-6 md:mt-0">
           <Image

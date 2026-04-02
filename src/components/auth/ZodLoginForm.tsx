@@ -1,4 +1,3 @@
-// Fixed ZodLoginForm.tsx
 'use client';
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -70,7 +69,7 @@ function ZodLoginForm() {
             <div className="w-full mt-4">
                 <h1 className="underline text-chart-2 font-bold">Forgot Password?</h1>
 
-                {/* ✅ FIX: removed onClick — form's onSubmit handles submission */}
+              
                 <button
                     type="submit"
                     className="bg-background border border-(--btn-pink) text-(--btn-pink) hover:text-background hover:bg-(--btn-pink) w-full rounded-[10px] h-12 mt-10"

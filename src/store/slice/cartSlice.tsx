@@ -26,18 +26,18 @@ const cartSlice = createSlice({
       );
 
       if (existingItem) {
-        existingItem.quantity += action.payload.quantity; // add quantity
+        existingItem.quantity += action.payload.quantity;
       } else {
         state.items.push(action.payload);
       }
     },
 
-  
+
     removeFromCart: (state, action: PayloadAction<string>) => {
       state.items = state.items.filter((item) => item.id !== action.payload);
     },
 
-   
+
     clearCart: (state) => {
       state.items = [];
     },

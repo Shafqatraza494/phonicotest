@@ -1,7 +1,6 @@
 import { useMutation } from "@tanstack/react-query";
 import { toast } from "sonner";
 
-// API function
 async function sendOtpApi(email: string) {
   const res = await fetch("/api/send-otp", {
     method: "POST",
@@ -19,7 +18,6 @@ async function sendOtpApi(email: string) {
   return data;
 }
 
-// Custom hook using React Query
 export const useSendOtp = () => {
   return useMutation({
     mutationFn: sendOtpApi,

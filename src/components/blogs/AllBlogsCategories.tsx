@@ -29,7 +29,7 @@ function AllBlogsCategories({ type, allcategories, blogData }: blogprops) {
   return (
     <div className="py-5 px-4 sm:px-6 md:px-10 lg:px-15">
 
-      {/* ── Categories ── */}
+     
       <div className="flex justify-center items-center flex-col py-3">
         <h1 className="font-bold text-[24px]">Categories to Explore</h1>
 
@@ -52,10 +52,10 @@ function AllBlogsCategories({ type, allcategories, blogData }: blogprops) {
         </div>
       </div>
 
-      {/* ── Section Title ── */}
+     
       <h1 className="text-[24px] font-bold mt-2 capitalize">{type}</h1>
 
-      {/* ── Blog Grid ── */}
+   
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-4">
         {blogData && blogData.length > 0 ? (
           blogData.map((blog: blog, index) => (
@@ -63,7 +63,7 @@ function AllBlogsCategories({ type, allcategories, blogData }: blogprops) {
               key={index}
               className="flex flex-col bg-white shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden cursor-pointer"
             >
-              {/* Image */}
+             
               <div className="relative w-full aspect-[3/2] overflow-hidden">
                 <Image
                   src={blog.image}
@@ -74,15 +74,15 @@ function AllBlogsCategories({ type, allcategories, blogData }: blogprops) {
                 />
               </div>
 
-              {/* Content */}
+            
               <div className="flex flex-col flex-1 p-4 sm:p-5">
 
-                {/* Category */}
+          
                 <p className="text-xs text-(--btn-pink) font-bold">
                   {blog.blog_category.slug}
                 </p>
 
-                {/* Title + Arrow */}
+               
                 <Link href={`/blogs/${blog.blog_category.slug}/${blog.slug}`}>
                   <div className="flex items-start justify-between gap-2 mt-2 group">
                     <h3 className="font-bold text-[20px] leading-snug group-hover:text-(--btn-pink) transition-colors">
@@ -92,12 +92,12 @@ function AllBlogsCategories({ type, allcategories, blogData }: blogprops) {
                   </div>
                 </Link>
 
-                {/* Description */}
+               
                 <p className="mt-3 text-sm text-ring line-clamp-3 leading-relaxed">
                   {blog.description}
                 </p>
 
-                {/* Author + Date */}
+               
                 <div className="mt-auto pt-5 flex items-center justify-between gap-2">
                   <div className="flex items-center gap-3 min-w-0">
                     <div className="relative w-9 h-9 shrink-0">

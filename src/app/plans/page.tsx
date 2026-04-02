@@ -1,7 +1,6 @@
 import Grid from "@/components/home/Grid";
 import Packages from "@/components/comons/Packages";
 import { getGuestPlans } from "@/lib/services/packages/plan.services";
-// import { Plan } from "../page";
 import { Plan } from "./[slug]/page";
 import { generateSlug } from "@/lib/slug";
 import Carousal from "@/components/comons/Carousal";

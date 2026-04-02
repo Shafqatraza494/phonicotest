@@ -13,7 +13,7 @@ async function page({ params }: any) {
     return (
         <div className=" mx-auto px-5 md-px-15  py-8 font-sans text-gray-900">
 
-            {/* Hero Image */}
+           
             <div className="w-full rounded-xl overflow-hidden mb-6">
                 <Image
                     src={blog?.image || "/details.webp"}
@@ -24,7 +24,7 @@ async function page({ params }: any) {
                 />
             </div>
 
-            {/* Author + Date */}
+         
             <div className="flex items-center gap-3 mb-6">
                 {blog?.author_image ? (
                     <Image
@@ -47,7 +47,7 @@ async function page({ params }: any) {
                 </span>
             </div>
 
-            {/* Blog HTML Content */}
+          
             <div
                 className="
           prose prose-gray max-w-none

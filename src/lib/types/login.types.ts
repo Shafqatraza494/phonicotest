@@ -14,15 +14,15 @@ export interface User {
   image_url: string | null;
   deleted_at: string | null;
   status: string;
-  balance: number; // ← was string, actual value is number
+  balance: number;
 }
 
 export type LoginResponseType = {
-  status: boolean; // ← was string, actual value is boolean
+  status: boolean;
   access_token: string;
   token_type: string;
   device_token: string | null;
-  user: User; // ← was User[], now single object
+  user: User;
   customer_stripe_id: string;
-  customer_stripe_blocked: boolean; // ← was string, actual value is boolean
+  customer_stripe_blocked: boolean;
 };

@@ -4,7 +4,6 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const devices: string[] = [
-  // ===== APPLE =====
   "iPhone XS",
   "iPhone XS Max",
   "iPhone XR",
@@ -39,7 +38,6 @@ const devices: string[] = [
   "iPhone 17 Pro Max",
   "iPhone Air",
 
-  // ===== IPAD =====
   "iPad Pro 11-inch (1st generation)",
   "iPad Pro 11-inch (2nd generation)",
   "iPad Pro 11-inch (3rd generation)",
@@ -59,7 +57,6 @@ const devices: string[] = [
   "iPad (9th generation)",
   "iPad (10th generation)",
 
-  // ===== SAMSUNG =====
   "Samsung Galaxy S20",
   "Samsung Galaxy S20+",
   "Samsung Galaxy S20 Ultra",
@@ -105,7 +102,6 @@ const devices: string[] = [
   "Samsung Galaxy Z Flip7",
   "Samsung Galaxy Z Flip 7 FE",
 
-  // ===== GOOGLE =====
   "Google Pixel 2",
   "Google Pixel 2 XL",
   "Google Pixel 3",
@@ -136,7 +132,6 @@ const devices: string[] = [
   "Pixel 10 Pro Fold",
   "Pixel Pro XL",
 
-  // ===== (rest brands kept same but cleaned) =====
   "Huawei P40",
   "Huawei P40 Pro",
   "Huawei P50 Pro",
@@ -217,7 +212,7 @@ function CompatibilityModal() {
   }
   return (
     <div className="w-82 md:w-full h-[90vh] md:h-full overflow-auto max-w-6xl  mx-auto rounded-xl bg-background p-8 relative">
-      {/* Header */}
+    
       <div className="text-center mb-8">
         <h1 className="text-2xl font-semibold">
           Check Your Device Compatibility
@@ -227,16 +222,16 @@ function CompatibilityModal() {
         </p>
       </div>
 
-      {/* Content */}
+    
       <div className="flex md:flex-row flex-col gap-8 ">
-        {/* LEFT SIDE */}
+     
         <div className="md:w-[120%]">
           <div className="flex flex-col items-center mb-4">
             <Image src="/findDevice.svg" alt="find" width={60} height={60} />
             <h3 className="mt-2 font-semibold text-lg">Find your Device</h3>
           </div>
 
-          {/* Inputs */}
+       
           <div className="flex md:flex-row flex-col h-18 gap-2 mb-3">
             <input
               onChange={(e) => itemSerch(e.target.value)}
@@ -264,7 +259,7 @@ function CompatibilityModal() {
             </select>
           </div>
 
-          {/* Device List */}
+        
           <div className="border rounded-md max-h-52 overflow-y-auto bg-white">
             {allItems?.map((device) => (
               <div
@@ -277,12 +272,12 @@ function CompatibilityModal() {
           </div>
         </div>
         <div></div>
-        {/* OR */}
+      
         <div className="flex justify-center items-center">
           <span className="text-3xl font-semibold text-(--btn-pink)">OR</span>
         </div>
 
-        {/* RIGHT SIDE */}
+    
         <div className="block">
           <div className="flex flex-col items-center mb-4 ">
             <Image src="/imei.svg" alt="imei" width={60} height={60} />
@@ -295,7 +290,7 @@ function CompatibilityModal() {
             </p>
           </div>
 
-          {/* IMEI Input */}
+       
           <div className="flex gap-2">
             <input
               className="flex-1 h-11 rounded-md border px-3 text-sm bg-background"

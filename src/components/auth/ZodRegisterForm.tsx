@@ -6,7 +6,6 @@ import { registerServices } from "@/lib/services/auth/auth.services";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 
-// 🔥 ADD THIS
 import { signIn } from "next-auth/react";
 
 const formSchema = z.object({
@@ -57,16 +56,15 @@ function ZodRegisterForm() {
             if (resp.status === true) {
                 toast.success(resp.message);
 
-                // 🔥 AUTO LOGIN AFTER REGISTER
                 const loginResp = await signIn("credentials", {
                     email: userData.email,
                     password: userData.password,
-                    redirect: false, // ❗ important
+                    redirect: false, 
                 });
 
                 if (loginResp?.ok) {
                     reset();
-                    route.push("/"); // header update ho jayega
+                    route.push("/"); 
                 } else {
                     toast.error("Login failed after register");
                 }

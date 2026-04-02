@@ -15,7 +15,6 @@ export async function getGuestBlogsSingleCategories(slug: string) {
       headers: { "API-KEY": apiKey },
     });
     const data: BlogResponseTypes = await resp.json();
-    console.log("pp", data);
 
     return data.data;
   } catch (error) {

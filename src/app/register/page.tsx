@@ -60,7 +60,7 @@ function page() {
                         </button>
                     </div>
 
-                    {/* Register Form */}
+                  
                     <div className="w-full mt-6">
                         <Register />
                     </div>

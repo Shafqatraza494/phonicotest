@@ -1,4 +1,3 @@
-// Fixed auth.ts
 import { loginServices } from "@/lib/services/auth/auth.services";
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
@@ -47,7 +46,7 @@ export const authOptions = {
 
  
   pages: {
-    signIn: "/login", // change to your actual login route
+    signIn: "/login",  
   },
 
   session: {

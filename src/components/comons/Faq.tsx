@@ -72,7 +72,7 @@ function Faq() {
               collapsible
               className="max-w-lg flex md:flex-row flex-col md:gap-30 "
             >
-              {/* LEFT SIDE */}
+            
               <div>
                 {faqData
                   .filter((item) => item.column === "left")
@@ -95,7 +95,7 @@ function Faq() {
                   ))}
               </div>
 
-              {/* RIGHT SIDE */}
+          
               <div>
                 {faqData
                   .filter((item) => item.column === "right")

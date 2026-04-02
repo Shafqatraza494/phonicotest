@@ -69,7 +69,7 @@ function Header() {
     <>
       <header className="sticky flex justify-center top-0 z-50 w-full bg-white shadow-sm">
         <div className="container py-3 px-3 md:px-15 flex items-center justify-between">
-          {/* logo */}
+        
           <Link href="/">
             <img
               src="https://phonico.com/_next/image/?url=%2Fimages%2FsiteLogo.png&w=96&q=75"
@@ -78,7 +78,7 @@ function Header() {
             />
           </Link>
 
-          {/* NAV (DESKTOP) */}
+        
           <ul className="hidden md:flex items-center gap-10 font-bold">
             {navLinks.map((link) => {
               const isActive =
@@ -101,9 +101,9 @@ function Header() {
             })}
           </ul>
 
-          {/* RIGHT SIDE */}
+        
           <div className="flex items-center gap-2 sm:gap-3">
-            {/* CART */}
+         
             <Sheet>
               <SheetTrigger asChild>
                 <button className="relative border border-ring/50 h-12 md:w-14 flex justify-center p-2 rounded-sm">
@@ -188,7 +188,7 @@ function Header() {
               </SheetContent>
             </Sheet>
 
-            {/* TOPUP */}
+          
             <Link href="/top-up-now">
               <Button>
                 <RefreshCw className="w-4 h-4 hidden sm:inline" />
@@ -196,7 +196,7 @@ function Header() {
               </Button>
             </Link>
 
-            {/* AUTH */}
+          
             {status === "loading" ? null : !isLoggedIn ? (
               <>
                 <Link href="/login">
@@ -230,7 +230,7 @@ function Header() {
               </>
             )}
 
-            {/* MOBILE MENU BUTTON */}
+          
             <button
               onClick={() => setOpen(!open)}
               className="md:hidden border-2 p-2 rounded-md"
@@ -241,7 +241,7 @@ function Header() {
         </div>
       </header>
 
-      {/* MOBILE MENU CONTENT */}
+    
       {open && (
         <div className="md:hidden bg-white w-full px-5 py-4 shadow-md fixed top-23">
           <ul className="flex flex-col gap-4 font-bold">

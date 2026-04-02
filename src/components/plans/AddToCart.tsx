@@ -165,7 +165,7 @@ function AddToCart({ planFromSlug }: AddToCartProps) {
                   </button>
                 </SheetTrigger>
 
-                {/* SHOPPING CART DRAWER */}
+            
                 <SheetContent className="rounded-3xl h-120" side="right">
                   <SheetHeader className="flex items-center justify-center bg-(--btn-pink) rounded-tl-2xl rounded-tr-2xl">
                     <SheetTitle>Shopping Cart</SheetTitle>

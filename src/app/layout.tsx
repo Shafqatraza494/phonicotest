@@ -27,7 +27,7 @@ export default function RootLayout({
 
               <Footer />
 
-              {/* ✅ Toast container added */}
+
               <Toaster style={{ marginTop: '10px' }} position="top-right" richColors />
             </Providers>
           </QueryClientProvider>

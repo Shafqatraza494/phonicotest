@@ -36,15 +36,15 @@ export default function Grid() {
             key={index}
             className={`${card.bg} p-6 rounded-lg shadow-sm flex flex-col items-start`}
           >
-            {/* Icon */}
+          
             <img className="w-12 h-12 mb-4" src={card.img} alt="" />
 
-            {/* Heading */}
+       
             <h2 className=" font-medium text-lg sm:text-xl mb-2">
               {card.title}
             </h2>
 
-            {/* Paragraph */}
+        
             <p className="text-sm sm:text-base text-ring">{card.desc}</p>
           </div>
         ))}

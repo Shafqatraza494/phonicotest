@@ -6,7 +6,6 @@ import { ComponentProps } from "react"
 
 import { cn } from "@/lib/utils"
 
-// ✅ FIXED (Group → PanelGroup)
 function ResizablePanelGroup({
   className,
   ...props
@@ -23,14 +22,12 @@ function ResizablePanelGroup({
   )
 }
 
-// ✅ OK (Panel same hai)
 function ResizablePanel({
   ...props
 }: ComponentProps<typeof ResizablePrimitive.Panel>) {
   return <ResizablePrimitive.Panel data-slot="resizable-panel" {...props} />
 }
 
-// ✅ FIXED (Separator → PanelResizeHandle)
 function ResizableHandle({
   withHandle,
   className,
