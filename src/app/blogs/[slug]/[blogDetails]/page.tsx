@@ -11,7 +11,7 @@ async function page({ params }: any) {
     const blog = data?.data;
 
     return (
-        <div className=" mx-auto px-15 py-8 font-sans text-gray-900">
+        <div className=" mx-auto px-5 md-px-15  py-8 font-sans text-gray-900">
 
             {/* Hero Image */}
             <div className="w-full rounded-xl overflow-hidden mb-6">

@@ -42,11 +42,9 @@ function Header() {
 
   const handleLogout = () => {
     signOut({ callbackUrl: "/login" });
-    toast.success('Logout Success')
-
+    toast.success("Logout Success");
   };
 
- 
   const cartItems = useSelector((state: RootState) => state.cart.items);
   const item = cartItems[0];
 
@@ -71,18 +69,16 @@ function Header() {
     <>
       <header className="sticky flex justify-center top-0 z-50 w-full bg-white shadow-sm">
         <div className="container py-3 px-3 md:px-15 flex items-center justify-between">
-          {/* LOGO */}
-          <div className="flex items-center">
-            <Link href={"/"}>
-              <img
-                src="https://phonico.com/_next/image/?url=%2Fimages%2FsiteLogo.png&w=96&q=75"
-                alt="logo"
-                className="w-20 h-auto"
-              />
-            </Link>
-          </div>
+          {/* logo */}
+          <Link href="/">
+            <img
+              src="https://phonico.com/_next/image/?url=%2Fimages%2FsiteLogo.png&w=96&q=75"
+              alt="logo"
+              className="w-20 h-auto"
+            />
+          </Link>
 
-          {/* NAV */}
+          {/* NAV (DESKTOP) */}
           <ul className="hidden md:flex items-center gap-10 font-bold">
             {navLinks.map((link) => {
               const isActive =
@@ -110,7 +106,7 @@ function Header() {
             {/* CART */}
             <Sheet>
               <SheetTrigger asChild>
-                <button className="relative border border-ring/50 h-12 w-14 flex justify-center p-2 rounded-sm">
+                <button className="relative border border-ring/50 h-12 md:w-14 flex justify-center p-2 rounded-sm">
                   <ShoppingCart />
                   {cartItems.length > 0 && (
                     <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
@@ -126,11 +122,11 @@ function Header() {
                 </SheetHeader>
 
                 {!item ? (
-                  <div className="items-center justify-center flex flex-col gap-3 mt-10">
+                  <div className="flex flex-col items-center gap-3 mt-10">
                     <Image
                       height={183}
                       width={172}
-                      src={"/emptyCart.svg"}
+                      src="/emptyCart.svg"
                       alt="empty"
                     />
                     <h5>Your cart is empty</h5>
@@ -145,12 +141,14 @@ function Header() {
                       <Image
                         height={81}
                         width={91}
-                        src={"/siteLogo.png"}
+                        src="/siteLogo.png"
                         alt="logo"
                       />
                       <div className="flex p-3 justify-between bg-ring/10 flex-1">
                         <div>
-                          <h1 className="font-bold text-[20px]">{item.name}</h1>
+                          <h1 className="font-bold text-[20px]">
+                            {item.name}
+                          </h1>
                           <p className="text-[12px] text-ring">
                             eSIM/Unlimited
                           </p>
@@ -191,17 +189,18 @@ function Header() {
             </Sheet>
 
             {/* TOPUP */}
-            <Link href={"/top-up-now"}>
+            <Link href="/top-up-now">
               <Button>
                 <RefreshCw className="w-4 h-4 hidden sm:inline" />
                 Top-Up Now
-              </Button></Link>
+              </Button>
+            </Link>
 
-          
+            {/* AUTH */}
             {status === "loading" ? null : !isLoggedIn ? (
               <>
-                <Link href={"/login"}>
-                  <div className="hidden md:block ">
+                <Link href="/login">
+                  <div className="hidden md:block">
                     <Button>
                       <LogIn />
                       Login
@@ -209,12 +208,11 @@ function Header() {
                   </div>
                 </Link>
 
-                <Link href={"/register"}>
-                  <button className="hidden md:flex items-center gap-2 border border-ring/50 px-4 py-3 rounded-sm font-bold cursor-pointer">
+                <Link href="/register">
+                  <button className="hidden md:flex items-center gap-2 border border-ring/50 px-4 py-3 rounded-sm font-bold">
                     <UserPlus className="w-4 h-4" />
                     Sign Up
                   </button>
-
                 </Link>
               </>
             ) : (
@@ -232,7 +230,7 @@ function Header() {
               </>
             )}
 
-            {/* MOBILE MENU */}
+            {/* MOBILE MENU BUTTON */}
             <button
               onClick={() => setOpen(!open)}
               className="md:hidden border-2 p-2 rounded-md"
@@ -242,6 +240,52 @@ function Header() {
           </div>
         </div>
       </header>
+
+      {/* MOBILE MENU CONTENT */}
+      {open && (
+        <div className="md:hidden bg-white w-full px-5 py-4 shadow-md fixed top-23">
+          <ul className="flex flex-col gap-4 font-bold">
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <Link href={link.href} onClick={() => setOpen(false)}>
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <div className="flex flex-col gap-3 mt-4">
+            {!isLoggedIn ? (
+              <>
+                <Link href="/login" onClick={() => setOpen(false)}>
+                  <div className="w-full">
+                    <Button>Login</Button>
+                  </div>
+                </Link>
+
+                <Link href="/register" onClick={() => setOpen(false)}>
+                  <button className="w-full border border-ring/50 px-4 py-3 rounded-sm font-bold">
+                    Sign Up
+                  </button>
+                </Link>
+              </>
+            ) : (
+              <>
+                <button className="w-full border border-ring/50 px-4 py-3 rounded-sm font-bold">
+                  💰 Wallet
+                </button>
+
+                <button
+                  onClick={handleLogout}
+                  className="w-full border border-red-400 px-4 py-3 rounded-sm font-bold text-red-500"
+                >
+                  Logout
+                </button>
+              </>
+            )}
+          </div>
+        </div>
+      )}
     </>
   );
 }

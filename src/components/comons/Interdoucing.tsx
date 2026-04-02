@@ -14,13 +14,13 @@ function Interdoucing({ head, headspan, headtwo, img, para }: propstypes) {
     <>
       <div className="py-5 md:px-15 px-3 ">
         <div className=" w-full rounded-[50px] bg-ring/15 ">
-          <div className="flex md:flex-row flex-col justify-between">
-            <div className="md:mx-10 w-[50%]">
-              <h1 className=" font-medium md:text-[50px] text-[10px]  ">
+          <div className="flex md:flex-row flex-col justify-between px-6 py-5 md:px-0 md:py-0">
+            <div className="md:mx-10 md:w-[50%]  w-full">
+              <h1 className=" font-medium md:text-[50px]   text-[30px]  ">
                 {head}
                 <span className="text-(--btn-pink)"> {headspan}</span> {headtwo}
               </h1>
-              <h1 className=" md:text-[20px] text-[10px]">{para}</h1>
+              <h1 className=" md:text-[20px] text-[15px]">{para}</h1>
               <h1 className="font-bold mt-5 text-[20px]">
                 Download the App now
               </h1>

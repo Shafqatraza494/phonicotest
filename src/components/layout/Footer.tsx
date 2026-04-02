@@ -58,7 +58,7 @@ function Footer() {
           <h1 className="flex font-bold text-[24px]  md:mt-15">
             Download the App now
           </h1>
-          <div className="flex  gap-5 mt-5 ">
+          <div className="flex md:flex-row flex-col gap-5 mt-5 ">
             <Link href={"https://apps.apple.com/"}>
               <Image height={40} width={150} src={"/appleLink.svg"} alt="" />
             </Link>

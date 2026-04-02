@@ -48,7 +48,7 @@ const Carousal = () => {
                     {Array.from({ length: 5 }).map((_, index) => (
                       <CarouselItem
                         key={index}
-                        className="basis-1/2 pl-1 lg:basis-1/3 "
+                        className="md:basis-1/2 basis-[85%] pl-1 lg:basis-1/3 "
                       >
                         <div className="p-1">
                           <Card className="h-80 border-none">
